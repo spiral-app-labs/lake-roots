@@ -7,44 +7,37 @@ export async function GET() {
     (
       <div
         style={{
-          width: "1200px",
-          height: "630px",
+          height: "100%",
+          width: "100%",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #2c3d24 0%, #87A878 50%, #8B6914 100%)",
-          fontFamily: "sans-serif",
-          position: "relative",
+          backgroundColor: "#2C2C2C",
+          backgroundImage: "linear-gradient(135deg, #2C2C2C 0%, #1a1a1a 100%)",
         }}
       >
-        {/* Overlay pattern */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "radial-gradient(circle at 30% 40%, rgba(255,248,231,0.15) 0%, transparent 60%)",
-            display: "flex",
-          }}
-        />
-
-        {/* Content */}
         <div
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            zIndex: 10,
+            border: "3px solid #87A878",
+            borderRadius: "24px",
+            padding: "60px 80px",
+            backgroundColor: "rgba(135, 168, 120, 0.08)",
           }}
         >
-          <div style={{ fontSize: "64px", marginBottom: "8px", display: "flex" }}>🌿</div>
+          <div style={{ fontSize: 64, marginBottom: 16, display: "flex" }}>🌿</div>
           <div
             style={{
-              fontSize: "56px",
-              fontWeight: 800,
+              fontSize: 56,
+              fontWeight: 700,
               color: "#FFF8E7",
-              marginBottom: "8px",
+              fontFamily: "Georgia, serif",
+              textAlign: "center",
+              lineHeight: 1.1,
               display: "flex",
             }}
           >
@@ -52,55 +45,38 @@ export async function GET() {
           </div>
           <div
             style={{
-              fontSize: "28px",
-              fontWeight: 600,
-              color: "#FFF8E7",
-              opacity: 0.9,
-              letterSpacing: "6px",
-              textTransform: "uppercase",
-              marginBottom: "24px",
+              fontSize: 24,
+              color: "#87A878",
+              marginTop: 8,
+              letterSpacing: "0.15em",
               display: "flex",
             }}
           >
-            Café • Market • Bar
+            Café · Market · Bar
           </div>
           <div
             style={{
-              fontSize: "22px",
-              color: "#FFF8E7",
-              opacity: 0.8,
-              marginBottom: "24px",
+              fontSize: 18,
+              color: "rgba(255, 248, 231, 0.6)",
+              marginTop: 20,
               display: "flex",
             }}
           >
-            475 W Virginia St, Crystal Lake, IL
+            475 W Virginia Street, Crystal Lake, IL
           </div>
-
-          {/* Stars */}
           <div
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "12px",
-              marginBottom: "8px",
+              gap: 12,
+              marginTop: 20,
             }}
           >
-            <div style={{ fontSize: "32px", color: "#F59E0B", display: "flex" }}>
-              ★★★★★
+            <div style={{ fontSize: 22, color: "#FFD700", display: "flex" }}>★★★★★</div>
+            <div style={{ fontSize: 22, color: "#FFF8E7", fontWeight: 700, display: "flex" }}>4.8</div>
+            <div style={{ fontSize: 18, color: "rgba(255, 248, 231, 0.5)", display: "flex" }}>
+              · 107+ Reviews
             </div>
-            <div style={{ fontSize: "36px", fontWeight: 800, color: "#FFF8E7", display: "flex" }}>
-              4.8
-            </div>
-          </div>
-          <div
-            style={{
-              fontSize: "20px",
-              color: "#FFF8E7",
-              opacity: 0.7,
-              display: "flex",
-            }}
-          >
-            107+ Reviews
           </div>
         </div>
       </div>

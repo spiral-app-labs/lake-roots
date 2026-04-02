@@ -1,74 +1,110 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import { useState } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/menu", label: "Menu" },
+  { href: "/beverages", label: "Beverages" },
+  { href: "/market", label: "Market" },
+  { href: "/events", label: "Events" },
+  { href: "/our-story", label: "Our Story" },
+];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const links = [
-    { href: "#about", label: "About" },
-    { href: "#menu", label: "Menu" },
-    { href: "#reviews", label: "Reviews" },
-    { href: "#market", label: "Market" },
-    { href: "#events", label: "Events" },
-    { href: "#visit", label: "Visit" },
-  ];
+  const [open, setOpen] = useState(false);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "glass shadow-lg" : "bg-transparent"}`}>
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#" className="flex items-center gap-2">
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          <Link href="/" className="flex items-center gap-2 group">
             <span className="text-2xl">🌿</span>
-            <span className={`font-serif text-xl md:text-2xl font-bold transition-colors ${scrolled ? "text-charcoal-800" : "text-white"}`}>
+            <span className="font-display text-xl sm:text-2xl text-cream tracking-wide group-hover:text-sage transition-colors">
               Lake Roots
             </span>
-          </a>
+          </Link>
 
-          {/* Desktop */}
+          {/* Desktop links */}
           <div className="hidden md:flex items-center gap-8">
             {links.map((l) => (
-              <a key={l.href} href={l.href} className={`text-sm font-medium tracking-wide uppercase transition-colors hover:text-sage-400 ${scrolled ? "text-charcoal-600" : "text-white/90"}`}>
+              <Link
+                key={l.href}
+                href={l.href}
+                className="text-cream/80 hover:text-sage text-sm uppercase tracking-widest transition-colors relative group"
+              >
                 {l.label}
-              </a>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-sage group-hover:w-full transition-all duration-300" />
+              </Link>
             ))}
-            <a href="tel:8158936240" className="bg-sage-400 hover:bg-sage-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105">
-              Call Us
+            <a
+              href="https://order.toasttab.com/egiftcards/lake-roots-475-west-virginia-street"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-sage text-white px-4 py-2 rounded-full text-sm uppercase tracking-wider hover:bg-sage-dark transition-colors"
+            >
+              Gift Cards
             </a>
           </div>
 
-          {/* Mobile toggle */}
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden p-2" aria-label="Menu">
-            <div className="space-y-1.5">
-              <span className={`block w-6 h-0.5 transition-all ${scrolled ? "bg-charcoal-800" : "bg-white"} ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
-              <span className={`block w-6 h-0.5 transition-all ${scrolled ? "bg-charcoal-800" : "bg-white"} ${mobileOpen ? "opacity-0" : ""}`} />
-              <span className={`block w-6 h-0.5 transition-all ${scrolled ? "bg-charcoal-800" : "bg-white"} ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden text-cream p-2"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            <div className="w-6 flex flex-col gap-1.5">
+              <motion.span
+                animate={open ? { rotate: 45, y: 7.5 } : { rotate: 0, y: 0 }}
+                className="block h-0.5 w-6 bg-cream"
+              />
+              <motion.span
+                animate={open ? { opacity: 0 } : { opacity: 1 }}
+                className="block h-0.5 w-6 bg-cream"
+              />
+              <motion.span
+                animate={open ? { rotate: -45, y: -7.5 } : { rotate: 0, y: 0 }}
+                className="block h-0.5 w-6 bg-cream"
+              />
             </div>
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="md:hidden glass-dark animate-fade-in">
-          <div className="px-4 py-6 space-y-4">
-            {links.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="block text-white/90 text-lg font-medium py-2 hover:text-sage-300">
-                {l.label}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="md:hidden overflow-hidden glass-dark"
+          >
+            <div className="px-4 py-6 flex flex-col gap-4">
+              {links.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="text-cream/80 hover:text-sage text-lg tracking-wide transition-colors"
+                >
+                  {l.label}
+                </Link>
+              ))}
+              <a
+                href="https://order.toasttab.com/egiftcards/lake-roots-475-west-virginia-street"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-sage text-white px-4 py-2 rounded-full text-sm uppercase tracking-wider text-center hover:bg-sage-dark transition-colors mt-2"
+              >
+                Gift Cards
               </a>
-            ))}
-            <a href="tel:8158936240" className="block bg-sage-400 text-white text-center px-5 py-3 rounded-full font-semibold mt-4">
-              Call (815) 893-6240
-            </a>
-          </div>
-        </div>
-      )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

@@ -1,36 +1,44 @@
 "use client";
-import { useEffect, useState } from "react";
-import { useInView } from "./useInView";
 
-interface AnimatedCounterProps {
+import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+
+interface Props {
   end: number;
-  duration?: number;
-  prefix?: string;
   suffix?: string;
-  decimals?: number;
+  prefix?: string;
+  duration?: number;
+  className?: string;
 }
 
-export default function AnimatedCounter({ end, duration = 2000, prefix = "", suffix = "", decimals = 0 }: AnimatedCounterProps) {
-  const { ref, isVisible } = useInView(0.3);
+export default function AnimatedCounter({ end, suffix = "", prefix = "", duration = 2000, className = "" }: Props) {
   const [count, setCount] = useState(end);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
 
   useEffect(() => {
-    if (!isVisible) return;
-    setCount(0);
-    const startTime = Date.now();
-    const timer = setInterval(() => {
-      const elapsed = Date.now() - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(eased * end);
-      if (progress >= 1) clearInterval(timer);
-    }, 16);
-    return () => clearInterval(timer);
-  }, [isVisible, end, duration]);
+    if (inView && !hasAnimated) {
+      setHasAnimated(true);
+      setCount(0);
+      const steps = 60;
+      const increment = end / steps;
+      let current = 0;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= end) {
+          setCount(end);
+          clearInterval(timer);
+        } else {
+          setCount(Math.floor(current));
+        }
+      }, duration / steps);
+      return () => clearInterval(timer);
+    }
+  }, [inView, hasAnimated, end, duration]);
 
   return (
-    <span ref={ref}>
-      {prefix}{decimals > 0 ? count.toFixed(decimals) : Math.round(count)}{suffix}
+    <span ref={ref} className={className}>
+      {prefix}{count}{suffix}
     </span>
   );
 }

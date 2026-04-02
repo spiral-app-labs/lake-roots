@@ -1,55 +1,18 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       colors: {
-        sage: {
-          50: '#f0f5ed',
-          100: '#dce8d5',
-          200: '#b9d1ab',
-          300: '#9bbd87',
-          400: '#87A878',
-          500: '#6e9460',
-          600: '#577748',
-          700: '#415a36',
-          800: '#2c3d24',
-          900: '#162012',
-        },
-        cream: {
-          50: '#FFFDF5',
-          100: '#FFF8E7',
-          200: '#FFF3D4',
-          300: '#FFEEC1',
-        },
-        wood: {
-          300: '#B8943A',
-          400: '#A07E1E',
-          500: '#8B6914',
-          600: '#6E530F',
-          700: '#523D0B',
-        },
-        charcoal: {
-          50: '#f5f5f5',
-          100: '#e5e5e5',
-          200: '#cccccc',
-          300: '#999999',
-          400: '#666666',
-          500: '#444444',
-          600: '#333333',
-          700: '#2a2a2a',
-          800: '#1a1a1a',
-          900: '#111111',
-        },
+        sage: { DEFAULT: "#87A878", light: "#a8c49b", dark: "#5e7d52" },
+        cream: { DEFAULT: "#FFF8E7", dark: "#f5edda" },
+        wood: { DEFAULT: "#8B6914", light: "#a8842a", dark: "#6b5010" },
+        charcoal: { DEFAULT: "#2C2C2C", light: "#444444" },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
+        display: ["Georgia", "serif"],
+        body: ["system-ui", "-apple-system", "sans-serif"],
       },
     },
   },
