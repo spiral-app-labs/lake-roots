@@ -8,7 +8,7 @@ import MenuCard from "@/components/MenuCard";
 import {
   BREAKFAST_MENU, PASTRIES, LUNCH_MENU,
   DINNER_STARTERS, DINNER_BOARDS, DINNER_PINSAS,
-  DINNER_BOWLS, DINNER_ENTREES, KIDS_MENU, DESSERTS,
+  DINNER_BOWLS, DINNER_ENTREES, KIDS_MENU, DESSERTS, IMAGE_ASSETS,
 } from "@/lib/data";
 
 export default function MenuPage() {
@@ -19,8 +19,8 @@ export default function MenuPage() {
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&h=800&fit=crop"
-          alt="Food"
+          src={IMAGE_ASSETS.tasting}
+          alt="Lake Roots dishes on the table"
           fill
           className="object-cover"
           priority

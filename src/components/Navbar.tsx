@@ -1,8 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { BRAND_ASSETS, LINKS } from "@/lib/data";
 
 const links = [
   { href: "/", label: "Home" },
@@ -17,14 +19,18 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-dark">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-charcoal/78 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <Link href="/" className="flex items-center gap-2 group">
-            <span className="text-2xl">🌿</span>
-            <span className="font-display text-xl sm:text-2xl text-cream tracking-wide group-hover:text-sage transition-colors">
-              Lake Roots
-            </span>
+          <Link href="/" className="group">
+            <Image
+              src={BRAND_ASSETS.logoLight}
+              alt="Lake Roots"
+              width={180}
+              height={48}
+              className="h-9 w-auto sm:h-10"
+              priority
+            />
           </Link>
 
           {/* Desktop links */}
@@ -40,7 +46,7 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href="https://order.toasttab.com/egiftcards/lake-roots-475-west-virginia-street"
+              href={LINKS.giftCards}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-sage text-white px-4 py-2 rounded-full text-sm uppercase tracking-wider hover:bg-sage-dark transition-colors"
@@ -94,7 +100,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <a
-                href="https://order.toasttab.com/egiftcards/lake-roots-475-west-virginia-street"
+                href={LINKS.giftCards}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-sage text-white px-4 py-2 rounded-full text-sm uppercase tracking-wider text-center hover:bg-sage-dark transition-colors mt-2"

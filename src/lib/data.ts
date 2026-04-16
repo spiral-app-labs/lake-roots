@@ -1,3 +1,46 @@
+export const CONTACT = {
+  phoneHref: "tel:8158936240",
+  phoneDisplay: "(815) 893-6240",
+  email: "events@lakerootscl.com",
+  addressLine1: "475 W Virginia Street",
+  addressLine2: "Crystal Lake, IL 60014",
+};
+
+export const SITE_CONFIG = {
+  previewUrl: "https://lake-roots.vercel.app",
+  businessUrl: "https://lakerootscl.com",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://lake-roots.vercel.app",
+};
+
+export const LINKS = {
+  instagram: "https://instagram.com/lakerootsco",
+  instagramProfileCard: "https://www.instagram.com/lakerootsco/profilecard/?igsh=MXI2M2c2OWFwMDBpcg%3D%3D",
+  facebook: "https://facebook.com/lakerootsco",
+  giftCards: "https://order.toasttab.com/egiftcards/lake-roots-475-west-virginia-street",
+  catering: "https://www.toasttab.com/invoice/lead?rx=3477ef2e-ca38-4b67-a8d3-b0ad50fce024&ot=45774fc6-5674-4347-9ff0-8460700a4161",
+  parties: "https://www.toasttab.com/invoice/lead?rx=3477ef2e-ca38-4b67-a8d3-b0ad50fce024&ot=49621c33-4543-4944-bca0-30c0ac6b4c8d",
+  collaborations: "https://docs.google.com/forms/d/1M0Bi9QqqUKo2Gy7GfFylkHL3u1IriRuaig58BA6ITPY/viewform?edit_requested=true",
+  artistInquiries: "https://docs.google.com/forms/d/e/1FAIpQLScsRg6gWgcoCpw2WKhAsJN3BbLAR9IgmDFckUi_3QKsGbP8HQ/viewform?usp=publish-editor",
+  marketSubmissions: "https://docs.google.com/forms/d/e/1FAIpQLScc2-bkd9SF-Bu3LJ16y6DCtvR9yXAsaR58dTojctN7J1X0DA/viewform",
+};
+
+export const BRAND_ASSETS = {
+  logoLight: "https://images.squarespace-cdn.com/content/v1/6809bd960f2dc66fd779e179/53142154-124c-4cde-a696-7cca164fc7a8/Primary_Linear_Cream.png",
+  logoDark: "https://images.squarespace-cdn.com/content/v1/6809bd960f2dc66fd779e179/d8157e55-d97d-4fa0-9ecb-321bde2f0729/Primary_Linear_Boat_Grey.png",
+  boatMark: "https://images.squarespace-cdn.com/content/v1/6809bd960f2dc66fd779e179/a9f410bc-a26d-4f3c-859e-1df9abd76f8e/Lake+Roots+-+Crystal+Lake+-+Boat+Logo",
+};
+
+export const IMAGE_ASSETS = {
+  hero: "https://images.squarespace-cdn.com/content/v1/6809bd960f2dc66fd779e179/0b35459b-9292-45c8-84eb-12b55540e533/Lake+Roots+Website+Banner-13.jpg",
+  dinner: "https://images.squarespace-cdn.com/content/v1/6809bd960f2dc66fd779e179/d69a00cf-5726-450f-811f-fc7d07e388ed/Lake+Roots+Dinner+Crystal+Lake",
+  founders: "https://images.squarespace-cdn.com/content/v1/6809bd960f2dc66fd779e179/0d8700a0-a01f-472e-87be-d3f2d62e64b0/Lake+Roots+Rod+and+Janey+-+Crystal+Lake",
+  tasting: "https://static1.squarespace.com/static/6809bd960f2dc66fd779e179/t/690aaf23ee39c00f909956d5/1762307875481/LakeRootsTasting-Sept22-03.jpg?format=1500w",
+  marketShelves: "https://images.squarespace-cdn.com/content/v1/6809bd960f2dc66fd779e179/1772478399017-BSM2AWKLBTIDHK51KYRF/image-asset.jpeg",
+};
+
+export const NO_RESERVATIONS_NOTE =
+  "At Lake Roots, no reservations are needed. Walk-ins are always welcome.";
+
 export const HOURS = [
   { day: "Monday", hours: "7:00 AM – 3:00 PM" },
   { day: "Tuesday", hours: "7:00 AM – 9:00 PM" },
@@ -9,15 +52,37 @@ export const HOURS = [
 ];
 
 export const INSTAGRAM_POSTS = [
-  { img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=600&fit=crop", alt: "Coffee cappuccino", likes: 112, comments: 14 },
-  { img: "https://images.unsplash.com/photo-1558030006-450675393462?w=600&h=600&fit=crop", alt: "BBQ sauce retail", likes: 87, comments: 9 },
-  { img: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&h=600&fit=crop", alt: "Pour over coffee demonstration", likes: 95, comments: 7 },
-  { img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=600&fit=crop", alt: "Kitchen tea towel market product", likes: 64, comments: 4 },
-  { img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=600&fit=crop", alt: "Restaurant ambiance", likes: 78, comments: 11 },
-  { img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600&h=600&fit=crop", alt: "Fresh juice", likes: 53, comments: 3 },
-  { img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&h=600&fit=crop", alt: "Cafe interior", likes: 101, comments: 12 },
-  { img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=600&fit=crop", alt: "Food plating", likes: 118, comments: 15 },
-  { img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=600&fit=crop", alt: "Restaurant interior", likes: 92, comments: 8 },
+  { img: IMAGE_ASSETS.hero, alt: "Lake Roots dining room and bar", label: "Inside Lake Roots" },
+  { img: IMAGE_ASSETS.dinner, alt: "Dinner service at Lake Roots", label: "Dinner + cocktails" },
+  { img: IMAGE_ASSETS.marketShelves, alt: "Market shelves stocked at Lake Roots", label: "Market finds" },
+  { img: IMAGE_ASSETS.founders, alt: "Rod and Janey at Lake Roots", label: "Rod + Janey" },
+];
+
+export const PROOF_POINTS = [
+  {
+    eyebrow: "Founder-Led",
+    title: "Built by locals for everyday moments in Crystal Lake.",
+    copy:
+      "The story page centers Rod and Janey, the Main Beach-to-Downtown location, and the goal of creating a place people can actually walk to and use often.",
+    source: "Lake Roots story",
+    href: `${SITE_CONFIG.businessUrl}/our-story`,
+  },
+  {
+    eyebrow: "Local Coverage",
+    title: "The opening was covered as a real Crystal Lake business story, not a generic concept launch.",
+    copy:
+      "Patch reported Lake Roots opening in the former Mr. A's space with a cafe, curated market, and bar that gives the neighborhood a new everyday gathering place.",
+    source: "Crystal Lake Patch",
+    href: "https://patch.com/illinois/crystallake/new-business-cafe-market-artisanal-bar-opens-crystal-lake",
+  },
+  {
+    eyebrow: "Community Demand",
+    title: "The neighborhood response has already been strong enough to make local news.",
+    copy:
+      "Shaw Local reported overflow parking and city adjustments around the site, which is a concrete sign that the business is drawing real attention from Crystal Lake locals.",
+    source: "Shaw Local",
+    href: "https://www.shawlocal.com/northwest-herald/2025/11/30/good-problem-success-of-new-crystal-lake-cafe-and-market-prompts-city-to-regulate-overflow-parking/",
+  },
 ];
 
 export const BREAKFAST_MENU = [
@@ -162,8 +227,11 @@ export const WINE_ROSE = ["Freixenet Sparkling Italian Rosé", "Bieler Père & F
 export const WINE_RED = ["Boen Pinot Noir", "Walking Fool Caymus Red Blend", "Bonanza Cabernet Sauvignon", "Decoy Merlot"];
 
 export const EVENTS = [
-  { title: "Easter Weekend", date: "April 5", time: "Normal Hours", desc: "Join us for a festive family brunch this Easter weekend", icon: "🐣" },
-  { title: "Book Signing — Amanda Schneider", date: "May 8", time: "2:00 – 5:00 PM", desc: "\"Work for What's Next\" — meet the author, grab a signed copy", icon: "📚" },
-  { title: "Live Music — Lara Bell", date: "May 9", time: "12:00 – 3:00 PM", desc: "Enjoy live acoustic tunes with your brunch and cocktails", icon: "🎵" },
-  { title: "Mother's Day Brunch", date: "May 10", time: "Reservations Available", desc: "Celebrate Mom with a special brunch menu and mimosas", icon: "💐" },
+  {
+    title: "Current happenings",
+    date: "Follow @lakerootsco",
+    time: "Live updates on Instagram",
+    desc: "Lake Roots shares weekly happenings, specials, and community moments through its active social channels.",
+    icon: "📍",
+  },
 ];
