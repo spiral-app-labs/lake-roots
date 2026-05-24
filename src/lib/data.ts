@@ -16,6 +16,7 @@ export const LINKS = {
   instagram: "https://instagram.com/lakerootsco",
   instagramProfileCard: "https://www.instagram.com/lakerootsco/profilecard/?igsh=MXI2M2c2OWFwMDBpcg%3D%3D",
   facebook: "https://facebook.com/lakerootsco",
+  directions: "https://www.google.com/maps/search/?api=1&query=Lake%20Roots%20475%20W%20Virginia%20Street%20Crystal%20Lake%20IL",
   giftCards: "https://order.toasttab.com/egiftcards/lake-roots-475-west-virginia-street",
   catering: "https://www.toasttab.com/invoice/lead?rx=3477ef2e-ca38-4b67-a8d3-b0ad50fce024&ot=45774fc6-5674-4347-9ff0-8460700a4161",
   parties: "https://www.toasttab.com/invoice/lead?rx=3477ef2e-ca38-4b67-a8d3-b0ad50fce024&ot=49621c33-4543-4944-bca0-30c0ac6b4c8d",
@@ -83,6 +84,18 @@ export const PROOF_POINTS = [
     source: "Shaw Local",
     href: "https://www.shawlocal.com/northwest-herald/2025/11/30/good-problem-success-of-new-crystal-lake-cafe-and-market-prompts-city-to-regulate-overflow-parking/",
   },
+];
+
+export const ANON_REVIEWS = [
+  { quote: "The restaurant is beautiful, the service is great.", source: "Yelp Review" },
+  { quote: "Best food and atmosphere in Crystal Lake.", source: "Yelp Review" },
+  { quote: "Lake Roots is quickly becoming the spot in Crystal Lake.", source: "Yelp Review" },
+  { quote: "It feels like a neighborhood gathering spot.", source: "Yelp Review" },
+  { quote: "the best lox ive had in my life.", source: "Yelp Review" },
+  { quote: "The food and service were excellent.", source: "Yelp Review" },
+  { quote: "Crystal Lake needs a place like this!", source: "Yelp Review" },
+  { quote: "Amazing new restaurant. Just what Crystal Lake needed.", source: "Yelp Review" },
+  { quote: "Our server was friendly and attentive.", source: "Yelp Review" },
 ];
 
 export const BREAKFAST_MENU = [

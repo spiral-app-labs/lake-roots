@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import AnonReviewCarousel from "@/components/AnonReviewCarousel";
 import AnimatedSection from "@/components/AnimatedSection";
 import InstagramGrid from "@/components/InstagramGrid";
 import { CONTACT, HOURS, IMAGE_ASSETS, LINKS, NO_RESERVATIONS_NOTE, PROOF_POINTS } from "@/lib/data";
@@ -54,10 +55,10 @@ export default function Home() {
               Your neighborhood place for everyday moments.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream/78 sm:text-xl">
-              Lake Roots brings together a cozy cafe, a community-driven market, and a lively dinner-and-cocktail room in the stretch between Main Beach and Downtown Crystal Lake.
+              Coffee and breakfast by day, dinner and cocktails by night, with market shelves and walk-in hospitality between Main Beach and Downtown Crystal Lake.
             </p>
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href="/menu"
                 className="rounded-full bg-sage px-8 py-3.5 text-center text-sm uppercase tracking-[0.22em] text-white transition-colors hover:bg-sage-dark"
@@ -65,10 +66,12 @@ export default function Home() {
                 Explore Menus
               </Link>
               <a
-                href={CONTACT.phoneHref}
+                href={LINKS.directions}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-full border border-cream/30 px-8 py-3.5 text-center text-sm uppercase tracking-[0.22em] text-cream transition-colors hover:border-cream/55 hover:bg-white/10"
               >
-                Walk In Today
+                Directions
               </a>
               <a
                 href={LINKS.parties}
@@ -78,6 +81,24 @@ export default function Home() {
               >
                 Host a Party
               </a>
+              <a
+                href={CONTACT.phoneHref}
+                className="rounded-full border border-transparent bg-white/10 px-8 py-3.5 text-center text-sm uppercase tracking-[0.22em] text-cream transition-colors hover:bg-white/20"
+              >
+                Call
+              </a>
+            </div>
+
+            <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs uppercase tracking-[0.22em] text-cream/70">
+              <a href={LINKS.catering} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-sage-light">
+                Catering
+              </a>
+              <a href={LINKS.giftCards} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-sage-light">
+                E-gift cards
+              </a>
+              <Link href="/events" className="transition-colors hover:text-sage-light">
+                Events
+              </Link>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-3">
@@ -130,7 +151,7 @@ export default function Home() {
       <section className="bg-cream py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mb-14 max-w-3xl">
-            <p className="mb-2 text-sm uppercase tracking-[0.3em] text-sage">Chosen Archetype: Cuisine</p>
+            <p className="mb-2 text-sm uppercase tracking-[0.3em] text-sage">Day-to-night Lake Roots</p>
             <h2 className="font-display text-4xl text-charcoal md:text-5xl">A warm, practical site with real neighborhood gravity.</h2>
             <p className="mt-4 text-lg leading-relaxed text-charcoal/70">
               Lake Roots works when the site is easy to navigate, emotionally local, and grounded in how the place actually runs. This pass leans into that instead of generic lifestyle polish.
@@ -140,7 +161,7 @@ export default function Home() {
           <div className="grid gap-6 lg:grid-cols-3">
             {serviceMoments.map((moment, index) => (
               <AnimatedSection key={moment.eyebrow} delay={index * 0.12}>
-                <article className="h-full rounded-[1.75rem] border border-sage/10 bg-white p-7 shadow-[0_20px_50px_rgba(44,44,44,0.06)]">
+                <article className="h-full rounded-[1.75rem] border border-sage/10 bg-white p-7 shadow-[0_20px_50px_rgba(44,44,44,0.06)] transition-transform duration-300 hover:-translate-y-1">
                   <p className="text-sm uppercase tracking-[0.28em] text-sage">{moment.eyebrow}</p>
                   <h3 className="mt-4 font-display text-3xl text-charcoal">{moment.title}</h3>
                   <p className="mt-4 leading-relaxed text-charcoal/66">{moment.copy}</p>
@@ -194,7 +215,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-cream py-20 sm:py-24">
+      <section id="proof" className="bg-cream py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="mb-12 max-w-3xl">
             <p className="mb-2 text-sm uppercase tracking-[0.3em] text-sage">Grounded Proof</p>
@@ -202,6 +223,12 @@ export default function Home() {
             <p className="mt-4 text-lg leading-relaxed text-charcoal/70">
               Lake Roots does not need inflated counters to feel trusted. The better story is already public: local founders, an opening covered by neighborhood news, and enough demand that the city has had to react to overflow parking.
             </p>
+          </AnimatedSection>
+
+          <AnonReviewCarousel />
+
+          <AnimatedSection className="mt-10 rounded-[1.25rem] border border-sage/10 bg-cream-dark p-5 text-sm leading-relaxed text-charcoal/70" delay={0.08}>
+            <span className="font-semibold text-charcoal">Planning note:</span> busy periods can fill the front and back lots, so the site now points mobile guests straight to directions and keeps the parking expectation clear.
           </AnimatedSection>
 
           <div className="grid gap-6 lg:grid-cols-3">
@@ -244,22 +271,22 @@ export default function Home() {
 
           <AnimatedSection delay={0.12}>
             <div className="grid gap-4 sm:grid-cols-2">
-              <a href={LINKS.parties} target="_blank" rel="noopener noreferrer" className="rounded-[1.5rem] border border-white/12 bg-white/10 p-6 transition-colors hover:bg-white/16">
+              <a href={LINKS.parties} target="_blank" rel="noopener noreferrer" className="rounded-[1.5rem] border border-white/12 bg-white/10 p-6 transition duration-300 hover:-translate-y-1 hover:bg-white/16">
                 <p className="text-xs uppercase tracking-[0.24em] text-sage-light">Private Events</p>
                 <h3 className="mt-3 font-display text-3xl">Host your party at Lake Roots</h3>
                 <p className="mt-3 text-sm leading-relaxed text-cream/74">Send guests to the real private-events flow used by the live business.</p>
               </a>
-              <a href={LINKS.catering} target="_blank" rel="noopener noreferrer" className="rounded-[1.5rem] border border-white/12 bg-white/10 p-6 transition-colors hover:bg-white/16">
+              <a href={LINKS.catering} target="_blank" rel="noopener noreferrer" className="rounded-[1.5rem] border border-white/12 bg-white/10 p-6 transition duration-300 hover:-translate-y-1 hover:bg-white/16">
                 <p className="text-xs uppercase tracking-[0.24em] text-sage-light">Catering</p>
                 <h3 className="mt-3 font-display text-3xl">Bring Lake Roots to the table</h3>
                 <p className="mt-3 text-sm leading-relaxed text-cream/74">Use the verified catering inquiry instead of a generic contact fallback.</p>
               </a>
-              <a href={LINKS.artistInquiries} target="_blank" rel="noopener noreferrer" className="rounded-[1.5rem] border border-white/12 bg-white/10 p-6 transition-colors hover:bg-white/16">
+              <a href={LINKS.artistInquiries} target="_blank" rel="noopener noreferrer" className="rounded-[1.5rem] border border-white/12 bg-white/10 p-6 transition duration-300 hover:-translate-y-1 hover:bg-white/16">
                 <p className="text-xs uppercase tracking-[0.24em] text-sage-light">Artists + Authors</p>
                 <h3 className="mt-3 font-display text-3xl">Bring something to the room</h3>
                 <p className="mt-3 text-sm leading-relaxed text-cream/74">Lake Roots keeps dedicated inquiry paths for musicians, artists, and authors.</p>
               </a>
-              <Link href="/events" className="rounded-[1.5rem] border border-white/12 bg-sage/22 p-6 transition-colors hover:bg-sage/30">
+              <Link href="/events" className="rounded-[1.5rem] border border-white/12 bg-sage/22 p-6 transition duration-300 hover:-translate-y-1 hover:bg-sage/30">
                 <p className="text-xs uppercase tracking-[0.24em] text-sage-light">See More</p>
                 <h3 className="mt-3 font-display text-3xl">Events page</h3>
                 <p className="mt-3 text-sm leading-relaxed text-cream/78">Browse the current inquiry options and follow Lake Roots for live weekly happenings.</p>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MobileActionBar from "@/components/MobileActionBar";
 import { CONTACT, IMAGE_ASSETS, LINKS, SITE_CONFIG } from "@/lib/data";
 
 const canonicalUrl = SITE_CONFIG.businessUrl;
@@ -88,10 +89,11 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-body">
+      <body className="font-body pb-20 md:pb-0">
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <MobileActionBar />
       </body>
     </html>
   );
