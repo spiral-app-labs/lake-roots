@@ -89,14 +89,14 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs uppercase tracking-[0.22em] text-cream/70">
-              <a href={LINKS.catering} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-sage-light">
+            <div className="mt-4 flex flex-wrap gap-2 text-xs uppercase tracking-[0.18em] text-cream/76">
+              <a href={LINKS.catering} target="_blank" rel="noopener noreferrer" className="flex min-h-[44px] items-center rounded-full border border-cream/18 bg-white/8 px-4 transition-colors hover:border-cream/35 hover:text-sage-light">
                 Catering
               </a>
-              <a href={LINKS.giftCards} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-sage-light">
+              <a href={LINKS.giftCards} target="_blank" rel="noopener noreferrer" className="flex min-h-[44px] items-center rounded-full border border-cream/18 bg-white/8 px-4 transition-colors hover:border-cream/35 hover:text-sage-light">
                 E-gift cards
               </a>
-              <Link href="/events" className="transition-colors hover:text-sage-light">
+              <Link href="/events" className="flex min-h-[44px] items-center rounded-full border border-cream/18 bg-white/8 px-4 transition-colors hover:border-cream/35 hover:text-sage-light">
                 Events
               </Link>
             </div>

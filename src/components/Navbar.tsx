@@ -57,7 +57,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-cream p-2"
+            className="flex min-h-[44px] min-w-[44px] items-center justify-center p-2 text-cream md:hidden"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >

@@ -107,7 +107,7 @@ export default function EventsPage() {
             <p className="mb-2 text-sm uppercase tracking-[0.3em] text-sage">Host + Collaborate</p>
             <h2 className="font-display text-4xl text-charcoal md:text-5xl">Real inquiry paths for the things owners actually care about.</h2>
             <p className="mt-4 text-lg leading-relaxed text-charcoal/68">
-              This page now reflects the live business model: local collaborations, cultural programming, market submissions, and group dining all route to actual forms instead of generic email placeholders.
+              This page now reflects the live business model: local collaborations, cultural programming, market submissions, and group dining all route to actual forms instead of generic contact forms.
             </p>
           </AnimatedSection>
 

@@ -19,7 +19,7 @@ export default function MobileActionBar() {
             <Link
               key={action.label}
               href={action.href}
-              className="rounded-full bg-charcoal px-2 py-2.5 text-center text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-cream"
+              className="flex min-h-[44px] items-center justify-center rounded-full bg-charcoal px-2 py-3 text-center text-[0.68rem] font-semibold uppercase leading-none tracking-[0.12em] text-cream"
             >
               {action.label}
             </Link>
@@ -29,7 +29,7 @@ export default function MobileActionBar() {
               href={action.href}
               target={action.href.startsWith("http") ? "_blank" : undefined}
               rel={action.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="rounded-full bg-sage px-2 py-2.5 text-center text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-white"
+              className="flex min-h-[44px] items-center justify-center rounded-full bg-sage px-2 py-3 text-center text-[0.68rem] font-semibold uppercase leading-none tracking-[0.12em] text-white"
             >
               {action.label}
             </a>

@@ -90,7 +90,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-body pb-20 md:pb-0">
+      <body className="font-body pb-24 md:pb-0">
         <Navbar />
         <main>{children}</main>
         <Footer />
