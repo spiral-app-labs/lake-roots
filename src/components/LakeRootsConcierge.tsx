@@ -90,11 +90,12 @@ export default function LakeRootsConcierge() {
         type="button"
         aria-label="Open Lake Roots concierge"
         onClick={() => setOpen(true)}
-        className={`fixed bottom-24 right-4 z-50 rounded-full border border-cream/30 bg-charcoal px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-cream shadow-[0_16px_40px_rgba(44,44,44,0.22)] transition hover:bg-charcoal-light md:bottom-6 md:right-6 ${
+        className={`fixed right-3 top-20 z-50 rounded-full border border-cream/30 bg-charcoal px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-cream shadow-[0_16px_40px_rgba(44,44,44,0.22)] transition hover:bg-charcoal-light md:bottom-6 md:right-6 md:top-auto md:px-5 md:tracking-[0.18em] ${
           open ? "pointer-events-none translate-y-3 opacity-0" : "translate-y-0 opacity-100"
         }`}
       >
-        Ask Lake Roots
+        <span className="md:hidden">Ask</span>
+        <span className="hidden md:inline">Ask Lake Roots</span>
       </button>
 
       <div
@@ -109,7 +110,7 @@ export default function LakeRootsConcierge() {
         role="dialog"
         aria-label="Lake Roots concierge"
         className={`fixed bottom-24 left-3 right-3 z-[70] flex max-h-[calc(100svh-8rem)] max-w-[calc(100vw-1.5rem)] flex-col overflow-hidden rounded-[1.25rem] border border-sage/20 bg-cream shadow-[0_24px_70px_rgba(44,44,44,0.28)] transition-transform duration-300 md:bottom-6 md:left-auto md:right-6 md:max-h-[680px] md:w-[430px] ${
-          open ? "translate-y-0" : "pointer-events-none translate-y-[120%]"
+          open ? "translate-y-0" : "pointer-events-none translate-y-[calc(100%+8rem)]"
         }`}
       >
         <div className="border-b border-sage/15 bg-charcoal px-5 py-4 text-cream">

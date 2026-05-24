@@ -48,9 +48,9 @@ export default function MenuPage() {
 
       {/* Day/Night Toggle */}
       <section className="py-6 bg-white sticky top-16 sm:top-20 z-40 border-b border-sage/10">
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-center gap-4">
-          <span className={`text-sm uppercase tracking-wider transition-colors ${!isDinner ? "text-sage font-semibold" : "text-charcoal/40"}`}>
-            ☀️ Breakfast & Lunch
+        <div className="mx-auto grid max-w-md grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2 px-4 sm:flex sm:max-w-7xl sm:justify-center sm:gap-4">
+          <span className={`text-center text-xs uppercase leading-tight tracking-[0.08em] transition-colors sm:text-sm sm:tracking-wider ${!isDinner ? "font-semibold text-sage" : "text-charcoal/40"}`}>
+            Breakfast & Lunch
           </span>
           <button
             onClick={() => setIsDinner(!isDinner)}
@@ -63,8 +63,8 @@ export default function MenuPage() {
               className="w-6 h-6 rounded-full bg-sage shadow-md"
             />
           </button>
-          <span className={`text-sm uppercase tracking-wider transition-colors ${isDinner ? "text-sage font-semibold" : "text-charcoal/40"}`}>
-            🌙 Dinner
+          <span className={`text-center text-xs uppercase leading-tight tracking-[0.08em] transition-colors sm:text-sm sm:tracking-wider ${isDinner ? "font-semibold text-sage" : "text-charcoal/40"}`}>
+            Dinner
           </span>
         </div>
       </section>

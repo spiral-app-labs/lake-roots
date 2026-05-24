@@ -48,10 +48,10 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(27,27,27,0.78),rgba(27,27,27,0.52),rgba(27,27,27,0.86))]" />
 
-        <div className="relative mx-auto grid min-h-[82svh] max-w-7xl gap-10 px-4 pb-16 sm:px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:px-8 lg:pb-24">
-          <AnimatedSection className="flex max-w-4xl flex-col justify-center py-10">
+        <div className="relative mx-auto grid min-h-[calc(100svh-4rem)] max-w-7xl gap-8 px-4 pb-12 sm:min-h-[82svh] sm:px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-10 lg:px-8 lg:pb-24">
+          <AnimatedSection className="flex max-w-4xl flex-col justify-start py-8 sm:py-10 lg:justify-center">
             <p className="mb-5 text-sm uppercase tracking-[0.38em] text-sage-light">Crystal Lake, Illinois</p>
-            <h1 className="font-display text-5xl leading-[0.92] sm:text-7xl lg:text-[5.5rem]">
+            <h1 className="font-display text-4xl leading-[0.95] sm:text-7xl sm:leading-[0.92] lg:text-[5.5rem]">
               Your neighborhood place for everyday moments.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream/78 sm:text-xl">
