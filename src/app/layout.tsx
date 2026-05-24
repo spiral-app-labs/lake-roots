@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MobileActionBar from "@/components/MobileActionBar";
+import LakeRootsConcierge from "@/components/LakeRootsConcierge";
 import { CONTACT, IMAGE_ASSETS, LINKS, SITE_CONFIG } from "@/lib/data";
 
 const canonicalUrl = SITE_CONFIG.businessUrl;
@@ -93,6 +94,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <LakeRootsConcierge />
         <MobileActionBar />
       </body>
     </html>
