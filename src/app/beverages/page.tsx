@@ -145,7 +145,7 @@ export default function BeveragesPage() {
       </section>
 
       {/* Cocktails */}
-      <section className="py-16 sm:py-20 bg-charcoal">
+      <section className="py-16 sm:py-20 bg-charcoal overflow-x-hidden">
         <div className="max-w-6xl mx-auto px-4">
           <AnimatedSection className="text-center mb-12">
             <p className="text-sage uppercase tracking-[0.3em] text-sm mb-2">🍸 Handcrafted</p>
