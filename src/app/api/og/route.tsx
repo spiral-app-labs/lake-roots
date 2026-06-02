@@ -27,55 +27,70 @@ export async function GET() {
             borderRadius: "24px",
             padding: "60px 80px",
             backgroundColor: "rgba(135, 168, 120, 0.08)",
+            maxWidth: "920px",
           }}
         >
-          <div style={{ fontSize: 64, marginBottom: 16, display: "flex" }}>🌿</div>
           <div
             style={{
-              fontSize: 56,
+              fontSize: 22,
+              letterSpacing: "0.32em",
+              textTransform: "uppercase",
+              color: "#87A878",
+              display: "flex",
+            }}
+          >
+            Crystal Lake, Illinois
+          </div>
+          <div
+            style={{
+              fontSize: 60,
               fontWeight: 700,
               color: "#FFF8E7",
               fontFamily: "Georgia, serif",
               textAlign: "center",
               lineHeight: 1.1,
               display: "flex",
+              marginTop: 20,
             }}
           >
-            Lake Roots
+            Lake Roots Cafe Market and Bar
           </div>
           <div
             style={{
-              fontSize: 24,
-              color: "#87A878",
-              marginTop: 8,
-              letterSpacing: "0.15em",
+              fontSize: 30,
+              color: "#FFF8E7",
+              marginTop: 16,
+              textAlign: "center",
+              maxWidth: "720px",
+              lineHeight: 1.25,
               display: "flex",
             }}
           >
-            Café · Market · Bar
+            Your neighborhood place for everyday moments.
           </div>
           <div
             style={{
-              fontSize: 18,
+              fontSize: 20,
               color: "rgba(255, 248, 231, 0.6)",
               marginTop: 20,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
               display: "flex",
             }}
           >
-            475 W Virginia Street, Crystal Lake, IL
+            Walk-ins welcome · Breakfast and lunch · Dinner and cocktails · Market
           </div>
           <div
             style={{
               display: "flex",
               alignItems: "center",
-              gap: 12,
-              marginTop: 20,
+              gap: 18,
+              marginTop: 28,
             }}
           >
-            <div style={{ fontSize: 22, color: "#FFD700", display: "flex" }}>★★★★★</div>
-            <div style={{ fontSize: 22, color: "#FFF8E7", fontWeight: 700, display: "flex" }}>4.8</div>
-            <div style={{ fontSize: 18, color: "rgba(255, 248, 231, 0.5)", display: "flex" }}>
-              · 107+ Reviews
+            <div style={{ width: 14, height: 14, borderRadius: 999, backgroundColor: "#87A878", display: "flex" }} />
+            <div style={{ fontSize: 20, color: "rgba(255, 248, 231, 0.72)", display: "flex" }}>
+              475 W Virginia Street, Crystal Lake, IL
             </div>
           </div>
         </div>

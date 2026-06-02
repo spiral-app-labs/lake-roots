@@ -1,151 +1,115 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
-import AnimatedCounter from "@/components/AnimatedCounter";
-import ParallaxImage from "@/components/ParallaxImage";
+import { CONTACT, IMAGE_ASSETS, LINKS } from "@/lib/data";
+
+const storyPoints = [
+  {
+    title: "Deep local roots",
+    copy: "The founders are explicit about being locals, and that shows up in the tone of the business, the people behind it, and the way the place is positioned in Crystal Lake.",
+  },
+  {
+    title: "A real place in the neighborhood",
+    copy: "Lake Roots sits in the bridge between Main Beach and Downtown, giving the story a concrete local anchor instead of generic lifestyle language.",
+  },
+  {
+    title: "Built for everyday rituals",
+    copy: "The idea is not just one special dinner. It is coffee runs, lunch stops, dinner plans, market browsing, and a place people can keep returning to throughout the week.",
+  },
+];
 
 export default function OurStoryPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+      <section className="relative isolate overflow-hidden bg-charcoal pt-28 text-cream sm:pt-32">
         <Image
-          src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=1920&h=900&fit=crop"
-          alt="Community"
+          src={IMAGE_ASSETS.founders}
+          alt="Rod and Janey at Lake Roots"
           fill
-          className="object-cover"
           priority
+          className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-charcoal/60" />
-        <div className="relative z-10 text-center px-4">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-display text-5xl md:text-7xl text-cream"
-          >
-            Our Story
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-cream/70 mt-4 text-lg max-w-xl mx-auto"
-          >
-            A place built for the neighborhood, by the neighborhood
-          </motion.p>
+        <div className="absolute inset-0 bg-charcoal/68" />
+        <div className="relative mx-auto max-w-5xl px-4 pb-20 text-center sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <p className="mb-4 text-sm uppercase tracking-[0.35em] text-sage-light">Our Story</p>
+            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl">Built for the neighborhood, by the neighborhood.</h1>
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-cream/76">
+              The strongest version of Lake Roots is not anonymous or over-polished. It is local, founder-led, and tied to the everyday moments people in Crystal Lake actually want a place for.
+            </p>
+          </AnimatedSection>
         </div>
       </section>
 
-      {/* The Story */}
-      <section className="py-20 sm:py-28 bg-cream">
-        <div className="max-w-4xl mx-auto px-4">
+      <section className="bg-cream py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <div className="bg-white rounded-2xl p-8 sm:p-12 shadow-xl border border-sage/10">
-              <div className="flex items-center gap-3 mb-8">
-                <span className="text-4xl">🌿</span>
-                <h2 className="font-display text-3xl md:text-4xl text-charcoal">From Rod & Janey</h2>
-              </div>
-              <blockquote className="text-charcoal/70 text-lg sm:text-xl leading-relaxed border-l-4 border-sage pl-6 sm:pl-8 italic">
-                &ldquo;We&rsquo;ve always wanted a place like this to walk to, right here in this special corner of Crystal Lake, formerly home to the beloved Mr. A&rsquo;s Italian Beef, and the bridge between Main Beach and Downtown. Everyone involved in Lake Roots is local, and we truly built this for the neighborhood and the community we love.
-                <br /><br />
-                It&rsquo;s a cafe, market, and bar all in one — a spot for coffee, a meal, or drink with friends that brings fresh energy, great food, and a welcoming atmosphere that feels like home.&rdquo;
+            <div className="rounded-[2rem] border border-sage/10 bg-white p-8 shadow-[0_20px_50px_rgba(44,44,44,0.06)] sm:p-12">
+              <p className="mb-3 text-sm uppercase tracking-[0.3em] text-sage">From Rod + Janey</p>
+              <blockquote className="font-display text-3xl leading-relaxed text-charcoal md:text-[2.35rem]">
+                &ldquo;We&apos;ve always wanted a place like this to walk to, right here in this special corner of Crystal Lake, formerly home to the beloved Mr. A&apos;s Italian Beef, and the bridge between Main Beach and Downtown.&rdquo;
               </blockquote>
-              <p className="mt-6 text-sage font-display text-xl">— Rod & Janey</p>
-              <p className="text-charcoal/50 text-sm mt-1">Founders, Lake Roots Café Market & Bar</p>
+              <p className="mt-5 text-lg leading-relaxed text-charcoal/68">
+                Everyone involved in Lake Roots is local, and the space was built to feel welcoming enough for coffee, lunch, dinner, drinks, and the kinds of shared moments that keep a neighborhood spot alive.
+              </p>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <AnimatedSection className="text-center mb-16">
-            <p className="text-sage uppercase tracking-[0.3em] text-sm mb-2">What We Believe</p>
-            <h2 className="font-display text-4xl md:text-5xl text-charcoal">Our Values</h2>
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="mb-12 max-w-3xl">
+            <p className="mb-2 text-sm uppercase tracking-[0.3em] text-sage">Why It Lands</p>
+            <h2 className="font-display text-4xl text-charcoal md:text-5xl">The story works because it is specific.</h2>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { icon: "🏡", title: "Community First", desc: "Every decision we make starts with our neighborhood. We built Lake Roots for Crystal Lake, and it shows in everything from our staff to our sourcing." },
-              { icon: "🌱", title: "Fresh & Local", desc: "We partner with local farms and makers to bring the freshest ingredients and products to your table and our market shelves." },
-              { icon: "☕", title: "Three in One", desc: "Morning coffee, afternoon lunch, evening cocktails — or just stop by to browse the market. Lake Roots is whatever you need it to be." },
-            ].map((value, i) => (
-              <AnimatedSection key={value.title} delay={i * 0.15}>
-                <div className="text-center p-8 rounded-2xl bg-cream/50 hover:bg-cream transition-colors duration-300">
-                  <span className="text-5xl mb-6 block">{value.icon}</span>
-                  <h3 className="font-display text-2xl text-charcoal mb-3">{value.title}</h3>
-                  <p className="text-charcoal/60 leading-relaxed">{value.desc}</p>
-                </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {storyPoints.map((point, index) => (
+              <AnimatedSection key={point.title} delay={index * 0.1}>
+                <article className="h-full rounded-[1.5rem] border border-sage/10 bg-cream p-7">
+                  <p className="text-sm uppercase tracking-[0.26em] text-sage">Neighborhood Signal</p>
+                  <h3 className="mt-4 font-display text-3xl text-charcoal">{point.title}</h3>
+                  <p className="mt-4 leading-relaxed text-charcoal/66">{point.copy}</p>
+                </article>
               </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Parallax */}
-      <ParallaxImage
-        src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1920&h=600&fit=crop"
-        alt="Cafe atmosphere"
-        className="h-64 sm:h-80"
-      >
-        <div className="flex items-center justify-center h-64 sm:h-80 text-center px-4">
-          <div>
-            <h2 className="font-display text-4xl md:text-5xl text-cream mb-4">The Bridge Between</h2>
-            <p className="text-cream/70 text-lg">Main Beach & Downtown Crystal Lake</p>
-          </div>
-        </div>
-      </ParallaxImage>
-
-      {/* Stats */}
-      <section className="py-16 bg-sage">
-        <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
-          <div>
-            <AnimatedCounter end={4} suffix=".8" className="text-4xl font-display" />
-            <p className="text-white/70 text-sm mt-2">★ Google Rating</p>
-          </div>
-          <div>
-            <AnimatedCounter end={107} suffix="+" className="text-4xl font-display" />
-            <p className="text-white/70 text-sm mt-2">Happy Reviews</p>
-          </div>
-          <div>
-            <AnimatedCounter end={3873} className="text-4xl font-display" />
-            <p className="text-white/70 text-sm mt-2">Instagram Family</p>
-          </div>
-          <div>
-            <AnimatedCounter end={1575} className="text-4xl font-display" />
-            <p className="text-white/70 text-sm mt-2">Facebook Likes</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Location */}
-      <section className="py-20 sm:py-28 bg-cream">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <section className="bg-cream-dark py-16 sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
           <AnimatedSection>
-            <p className="text-sage uppercase tracking-[0.3em] text-sm mb-2">Find Us</p>
-            <h2 className="font-display text-4xl md:text-5xl text-charcoal mb-8">Come Say Hello</h2>
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-sage/10 inline-block">
-              <p className="text-charcoal/70 text-lg mb-2">475 W Virginia Street</p>
-              <p className="text-charcoal/70 text-lg mb-4">Crystal Lake, IL 60014</p>
-              <a href="tel:8158936240" className="text-sage hover:text-sage-dark font-display text-2xl transition-colors block mb-4">
-                (815) 893-6240
+            <div className="overflow-hidden rounded-[2rem]">
+              <Image
+                src={IMAGE_ASSETS.hero}
+                alt="Lake Roots interior"
+                width={1400}
+                height={900}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection className="flex flex-col justify-center" delay={0.12}>
+            <p className="mb-2 text-sm uppercase tracking-[0.3em] text-sage">Find Us</p>
+            <h2 className="font-display text-4xl text-charcoal md:text-5xl">The bridge between Main Beach and Downtown.</h2>
+            <p className="mt-4 text-lg leading-relaxed text-charcoal/68">
+              That local positioning is one of the reasons the brand sticks. It gives guests a clear mental map and tells owners this redesign understands the real role the business plays in Crystal Lake.
+            </p>
+            <div className="mt-8 rounded-[1.5rem] border border-sage/10 bg-white p-6 text-charcoal">
+              <p>{CONTACT.addressLine1}</p>
+              <p>{CONTACT.addressLine2}</p>
+              <a href={CONTACT.phoneHref} className="mt-3 block font-display text-2xl text-sage transition-colors hover:text-sage-dark">
+                {CONTACT.phoneDisplay}
               </a>
-              <div className="flex gap-4 justify-center">
-                <a href="https://instagram.com/lakerootsco" target="_blank" rel="noopener noreferrer" className="text-charcoal/40 hover:text-sage transition-colors">
-                  Instagram
-                </a>
-                <span className="text-charcoal/20">·</span>
-                <a href="https://facebook.com/lakeroots" target="_blank" rel="noopener noreferrer" className="text-charcoal/40 hover:text-sage transition-colors">
-                  Facebook
-                </a>
-                <span className="text-charcoal/20">·</span>
-                <a href="mailto:events@lakerootscl.com" className="text-charcoal/40 hover:text-sage transition-colors">
-                  Email
-                </a>
+              <div className="mt-4 flex flex-wrap gap-4 text-sm uppercase tracking-[0.2em] text-charcoal/70">
+                <a href={LINKS.instagram} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-sage">Instagram</a>
+                <a href={LINKS.facebook} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-sage">Facebook</a>
+                <a href={`mailto:${CONTACT.email}`} className="transition-colors hover:text-sage">Email</a>
               </div>
             </div>
           </AnimatedSection>

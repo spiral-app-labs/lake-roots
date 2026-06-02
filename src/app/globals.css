@@ -5,9 +5,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   body {
     @apply bg-cream text-charcoal antialiased;
+    overflow-x: hidden;
   }
 }
 
@@ -18,6 +20,15 @@
   .glass-dark {
     @apply bg-charcoal/60 backdrop-blur-md border border-white/10;
   }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Custom scrollbar */

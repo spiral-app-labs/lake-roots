@@ -7,7 +7,7 @@ import MenuCard from "@/components/MenuCard";
 import TiltCard from "@/components/TiltCard";
 import {
   COFFEE_MENU, ADDONS, TEA_MENU, REVIVERS, SMOOTHIES,
-  LUNCH_COCKTAILS, DINNER_COCKTAILS, WINE_WHITE, WINE_ROSE, WINE_RED,
+  LUNCH_COCKTAILS, DINNER_COCKTAILS, WINE_WHITE, WINE_ROSE, WINE_RED, IMAGE_ASSETS,
 } from "@/lib/data";
 
 export default function BeveragesPage() {
@@ -16,8 +16,8 @@ export default function BeveragesPage() {
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&h=800&fit=crop"
-          alt="Coffee"
+          src={IMAGE_ASSETS.hero}
+          alt="Coffee and bar service at Lake Roots"
           fill
           className="object-cover"
           priority
@@ -145,7 +145,7 @@ export default function BeveragesPage() {
       </section>
 
       {/* Cocktails */}
-      <section className="py-16 sm:py-20 bg-charcoal">
+      <section className="py-16 sm:py-20 bg-charcoal overflow-x-hidden">
         <div className="max-w-6xl mx-auto px-4">
           <AnimatedSection className="text-center mb-12">
             <p className="text-sage uppercase tracking-[0.3em] text-sm mb-2">🍸 Handcrafted</p>

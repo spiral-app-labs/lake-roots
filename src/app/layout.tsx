@@ -2,18 +2,27 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MobileActionBar from "@/components/MobileActionBar";
+import LakeRootsConcierge from "@/components/LakeRootsConcierge";
+import { CONTACT, IMAGE_ASSETS, LINKS, SITE_CONFIG } from "@/lib/data";
+
+const canonicalUrl = SITE_CONFIG.businessUrl;
+const metadataBaseUrl = new URL(SITE_CONFIG.siteUrl);
 
 export const metadata: Metadata = {
   title: "Lake Roots Café Market & Bar | Crystal Lake, IL",
   description:
-    "Café by day, full-service dinner & cocktails by night, curated market. Three experiences under one roof in Crystal Lake, IL. 4.8★ rated.",
+    "Your neighborhood place for everyday moments in Crystal Lake, with breakfast and lunch, dinner and cocktails, and a community-driven market under one roof.",
+  alternates: {
+    canonical: canonicalUrl,
+  },
   keywords:
     "Lake Roots, Crystal Lake restaurant, cafe, market, bar, breakfast, lunch, dinner, cocktails",
   openGraph: {
     title: "Lake Roots Café Market & Bar",
     description:
-      "Café by day, dinner & cocktails by night, curated market. Crystal Lake, IL.",
-    url: "https://lake-roots.vercel.app",
+      "Your neighborhood place for everyday moments in Crystal Lake.",
+    url: canonicalUrl,
     siteName: "Lake Roots Café Market & Bar",
     images: [
       {
@@ -30,10 +39,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lake Roots Café Market & Bar",
     description:
-      "Café by day, dinner & cocktails by night, curated market. Crystal Lake, IL.",
+      "Your neighborhood place for everyday moments in Crystal Lake.",
     images: ["/api/og"],
   },
-  metadataBase: new URL("https://lake-roots.vercel.app"),
+  metadataBase: metadataBaseUrl,
 };
 
 export default function RootLayout({
@@ -51,24 +60,23 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Restaurant",
               name: "Lake Roots Café Market & Bar",
-              image: "https://lake-roots.vercel.app/api/og",
+              image: IMAGE_ASSETS.hero,
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "475 W Virginia Street",
+                streetAddress: CONTACT.addressLine1,
                 addressLocality: "Crystal Lake",
                 addressRegion: "IL",
                 postalCode: "60014",
                 addressCountry: "US",
               },
-              telephone: "(815) 893-6240",
-              url: "https://lake-roots.vercel.app",
+              slogan: "Your neighborhood place for everyday moments.",
+              telephone: CONTACT.phoneDisplay,
+              url: canonicalUrl,
+              mainEntityOfPage: canonicalUrl,
               servesCuisine: ["American", "Café", "Brunch"],
               priceRange: "$$",
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.8",
-                reviewCount: "107",
-              },
+              acceptsReservations: "False",
+              sameAs: [LINKS.instagram, LINKS.facebook, SITE_CONFIG.businessUrl],
               openingHoursSpecification: [
                 { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "07:00", closes: "15:00" },
                 { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "07:00", closes: "21:00" },
@@ -82,10 +90,12 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-body">
+      <body className="font-body pb-24 md:pb-0">
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <LakeRootsConcierge />
+        <MobileActionBar />
       </body>
     </html>
   );
